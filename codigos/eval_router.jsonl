@@ -1,0 +1,300 @@
+{"input": "solo qué eventos están sucediendo en pondichery este fin de semana", "expected_output": "recommendation"}
+{"input": "que tiempo hace", "expected_output": "weather"}
+{"input": "por favor en via un correo electrónico al tío jose que diga si lo puedo hacer", "expected_output": "email"}
+{"input": "enviar un correo electrónico a mi jefe", "expected_output": "email"}
+{"input": "con quien me encuentro yo hoy", "expected_output": "calendar"}
+{"input": "por favor tuitear en pizzahut he estado esperando mi entrega por ahora número no feliz", "expected_output": "social"}
+{"input": "olly cambia la luz a azul", "expected_output": "iot"}
+{"input": "abrir canciones de antonio vega", "expected_output": "play"}
+{"input": "qué es una buena película iraní de dos mil dieciséis", "expected_output": "recommendation"}
+{"input": "me gustan las canciones de julio iglesias por favor pon las", "expected_output": "music"}
+{"input": "quiero escuchar bulería de david bisbal", "expected_output": "play"}
+{"input": "quiero escuchar la agradecido de los rosendo", "expected_output": "play"}
+{"input": "busca restaurantes locales que estén abiertos ahora", "expected_output": "recommendation"}
+{"input": "hirviendo", "expected_output": "cooking"}
+{"input": "que tan grande es alaska", "expected_output": "qa"}
+{"input": "cómo está el tráfico en mi ruta habitual para ir al trabajo", "expected_output": "transport"}
+{"input": "envíe un correo electrónico a joe a. o. l. punto com", "expected_output": "email"}
+{"input": "quien es el primer ministro de rusia", "expected_output": "qa"}
+{"input": "recuérdame fregar las ventanas", "expected_output": "calendar"}
+{"input": "establecer un recordatorio todos los días al mediodía para tomar la medicación", "expected_output": "calendar"}
+{"input": "hey envía un correo electrónico a miguel", "expected_output": "email"}
+{"input": "comprueba el número de mamá", "expected_output": "email"}
+{"input": "por favor activa mi cafetera por mí", "expected_output": "iot"}
+{"input": "qué tipo de gafas de sol se consideran aviadores", "expected_output": "qa"}
+{"input": "oye google ponme algo de música jazz", "expected_output": "play"}
+{"input": "cómo está el tiempo hoy", "expected_output": "weather"}
+{"input": "agenda una cita de una hora para el sábado", "expected_output": "calendar"}
+{"input": "tengo que levantarme a las diez mañana", "expected_output": "alarm"}
+{"input": "resuma los detalles meteorológicos de la semana", "expected_output": "weather"}
+{"input": "que hora es en madrid capital", "expected_output": "datetime"}
+{"input": "crear una lista de reproducción", "expected_output": "lists"}
+{"input": "cuáles son las últimas noticias sobre mariano rajoy", "expected_output": "news"}
+{"input": "solo estoy buscando un bar conoces uno bueno", "expected_output": "recommendation"}
+{"input": "quien es celebridad", "expected_output": "qa"}
+{"input": "me gustaría fijar una fecha para esta semana", "expected_output": "calendar"}
+{"input": "olly tengo yo una alarma programada para mañana", "expected_output": "alarm"}
+{"input": "por favor limpia mi calendario", "expected_output": "calendar"}
+{"input": "inica pandora", "expected_output": "play"}
+{"input": "tengo nuevos correos electrónicos", "expected_output": "email"}
+{"input": "pon reunión con patricia para mañana a las diez de la mañana", "expected_output": "calendar"}
+{"input": "el significado de", "expected_output": "qa"}
+{"input": "dime el pronóstico del tiempo para esta semana", "expected_output": "weather"}
+{"input": "hará menos de diez grados en madrid", "expected_output": "weather"}
+{"input": "recuérdame la fiesta de mañana", "expected_output": "calendar"}
+{"input": "que hora es en chennai", "expected_output": "datetime"}
+{"input": "necesito enviar este correo ahora", "expected_output": "email"}
+{"input": "invitar personas al evento del calendario", "expected_output": "calendar"}
+{"input": "que está pasando", "expected_output": "social"}
+{"input": "lloverá mañana", "expected_output": "weather"}
+{"input": "controla correos electrónicos", "expected_output": "email"}
+{"input": "pon bilando", "expected_output": "play"}
+{"input": "cuándo va a llover la próxima vez", "expected_output": "weather"}
+{"input": "quien es la directora musical de esta canción", "expected_output": "music"}
+{"input": "necesito buenas ideas para cocinar", "expected_output": "cooking"}
+{"input": "cualquier evento cultural en california", "expected_output": "recommendation"}
+{"input": "debería ponerme el impermeable antes de salir", "expected_output": "weather"}
+{"input": "crea un correo para mi colega con mis documentos recientes", "expected_output": "email"}
+{"input": "por favor describe ese objeto para mí", "expected_output": "qa"}
+{"input": "que esta pasando alrededor del mundo", "expected_output": "news"}
+{"input": "poner mi cafetera", "expected_output": "iot"}
+{"input": "puedes escribir un correo electrónico a julia", "expected_output": "email"}
+{"input": "apagar todas las luces", "expected_output": "iot"}
+{"input": "radio por favor", "expected_output": "play"}
+{"input": "por favor elimina el resto", "expected_output": "calendar"}
+{"input": "llama a un taxi", "expected_output": "transport"}
+{"input": "ha llegado algún correo electrónico en los últimos quince minutos", "expected_output": "email"}
+{"input": "pon canciones de la banda el barrio", "expected_output": "play"}
+{"input": "va a llover el martes", "expected_output": "weather"}
+{"input": "no tengo suficiente dinero para comprar la nintendo switch en este momento pueden por favor quitarla de mi lista de deseos de amazon", "expected_output": "lists"}
+{"input": "oye cuál es el tiempo previsto para mañana", "expected_output": "weather"}
+{"input": "dime alguna noticia de negocios", "expected_output": "news"}
+{"input": "después pon sorry de justin bieber", "expected_output": "play"}
+{"input": "hey olly apaga la luz por favor", "expected_output": "iot"}
+{"input": "cuál es el tipo de cambio entre estados unidos y méxico", "expected_output": "qa"}
+{"input": "cuándo es mi próxima cita con el doctor janeiro", "expected_output": "calendar"}
+{"input": "pon la emisora de radio sirius xm", "expected_output": "play"}
+{"input": "hay tormentas probables hoy", "expected_output": "weather"}
+{"input": "preparen el pedido lo antes posible", "expected_output": "takeaway"}
+{"input": "buscar natalia", "expected_output": "email"}
+{"input": "hazme saber cuando escuches sobre españa", "expected_output": "news"}
+{"input": "en que día cae nochevieja este año", "expected_output": "datetime"}
+{"input": "dime algo que tengo que recordar esta semana", "expected_output": "calendar"}
+{"input": "algo interesánte en a. b. c.", "expected_output": "news"}
+{"input": "dime que tiempo va hace en ciudad real ahora mismo", "expected_output": "weather"}
+{"input": "hacer un nuevo horario para la reunión de mañana", "expected_output": "calendar"}
+{"input": "haz que sea rojo aqui", "expected_output": "iot"}
+{"input": "cual es el hobby de mario casas", "expected_output": "qa"}
+{"input": "por favor dame los números ganadores de la lotería de este fin de semana", "expected_output": "general"}
+{"input": "por favor agregue azúcar a mi lista de compras", "expected_output": "lists"}
+{"input": "el cumpleaños de jessica es el doce de abril", "expected_output": "calendar"}
+{"input": "no me despiertes mañana", "expected_output": "alarm"}
+{"input": "las dos menos cuarto", "expected_output": "datetime"}
+{"input": "cómo se prepara el arroz", "expected_output": "cooking"}
+{"input": "pon canciones", "expected_output": "play"}
+{"input": "olly podemos escuchar para contestar todo el podcast", "expected_output": "play"}
+{"input": "hay algo nuevo en mi buzón", "expected_output": "email"}
+{"input": "toca fm", "expected_output": "play"}
+{"input": "buscar tiendas locales", "expected_output": "recommendation"}
+{"input": "quiero escuchar un chiste", "expected_output": "general"}
+{"input": "california", "expected_output": "transport"}
+{"input": "quiero que avises por la noche sobre la próxima reunión", "expected_output": "calendar"}
+{"input": "va a hacer buen tiempo este fin de semana", "expected_output": "weather"}
+{"input": "recuérdame empezar la cena esta tarde a las cinco", "expected_output": "calendar"}
+{"input": "por favor aclara mi calendario", "expected_output": "calendar"}
+{"input": "cuales son mis tareas pendientes", "expected_output": "calendar"}
+{"input": "cómo está el tiempo hoy", "expected_output": "weather"}
+{"input": "puedes reservarme un billete de tren", "expected_output": "transport"}
+{"input": "cumpleaños", "expected_output": "calendar"}
+{"input": "describe el juego de cartas corazón piedra", "expected_output": "qa"}
+{"input": "a dónde fue amal clooney a la universidad", "expected_output": "qa"}
+{"input": "por favor selecciona la primera canción en mi biblioteca de itunes", "expected_output": "play"}
+{"input": "próximos eventos en calendario", "expected_output": "calendar"}
+{"input": "cuál es el patrimonio neto de leonardo dicaprio", "expected_output": "qa"}
+{"input": "que tengo programado para el diecinueve a las dos de la tarde", "expected_output": "calendar"}
+{"input": "cómo está el tiempo en barcelona", "expected_output": "weather"}
+{"input": "describe un rotor", "expected_output": "qa"}
+{"input": "olly pon música del género jazz", "expected_output": "play"}
+{"input": "qué música se está reproduciendo actualmente", "expected_output": "music"}
+{"input": "borra lo primero de mi lista", "expected_output": "lists"}
+{"input": "entregan a domicilio", "expected_output": "takeaway"}
+{"input": "deshacerse de todos los eventos con jeff", "expected_output": "calendar"}
+{"input": "escuchar radio", "expected_output": "play"}
+{"input": "enciende la aspiradora y ahora limpia el salón", "expected_output": "iot"}
+{"input": "como es el trafico ahora mismo", "expected_output": "transport"}
+{"input": "habra una cuarta guerra mundial", "expected_output": "general"}
+{"input": "salud", "expected_output": "general"}
+{"input": "formulario de correo electrónico para el vicepresidente regional", "expected_output": "email"}
+{"input": "enciende la aspiradora", "expected_output": "iot"}
+{"input": "jugar poker face de lady gaga", "expected_output": "play"}
+{"input": "encuentra chistes graciosos", "expected_output": "general"}
+{"input": "agregue la fecha de la cena de mañana al calendario", "expected_output": "calendar"}
+{"input": "por favor añade práctica el cuatro de febrero en el parque del retiro a las dos de la tarde", "expected_output": "calendar"}
+{"input": "sube el volumen de mi altavoces", "expected_output": "audio"}
+{"input": "lista de lo más visto", "expected_output": "lists"}
+{"input": "no hagas nada de ruido hasta la alarma de la mañana", "expected_output": "audio"}
+{"input": "cómo puedo llegar a casa desde aquí", "expected_output": "transport"}
+{"input": "entre el uno de febrero y dieciséis de marzo que reuniones tengo", "expected_output": "calendar"}
+{"input": "conocimiento sobre procesamiento de alimentos", "expected_output": "cooking"}
+{"input": "agregar evento para una reunión con james", "expected_output": "calendar"}
+{"input": "verifica el precio de las acciones para los donuts pequeños", "expected_output": "qa"}
+{"input": "por favor quita este evento de mi agenda", "expected_output": "calendar"}
+{"input": "que tienes pensado", "expected_output": "general"}
+{"input": "que fecha es hoy", "expected_output": "datetime"}
+{"input": "eliminar la lista de invitados que creé la semana pasada", "expected_output": "lists"}
+{"input": "poner colores oscuros en lugar de claros en la casa", "expected_output": "iot"}
+{"input": "eliminar el último elemento de la lista", "expected_output": "lists"}
+{"input": "cuáles son las nuevas películas dramáticas que se estrenan este fin de semana", "expected_output": "recommendation"}
+{"input": "bautizo de la hija de cristina", "expected_output": "calendar"}
+{"input": "cuál es el paseo favorito de david bustamante", "expected_output": "qa"}
+{"input": "cuándo es mi brunch con jennifer", "expected_output": "calendar"}
+{"input": "que conduce mejor el calor ollas con fondo de cobre o hierro fundido", "expected_output": "cooking"}
+{"input": "subió o bajó el precio de las acciones de walmart", "expected_output": "qa"}
+{"input": "recuerdame revisar el estofado a las seis en punto", "expected_output": "calendar"}
+{"input": "detalle para el precio de las acciones", "expected_output": "qa"}
+{"input": "por favor revisa el nuevo email de andrea", "expected_output": "email"}
+{"input": "solo hazme saber el tiempo de las próximas semanas en california", "expected_output": "email"}
+{"input": "olly tengo ganas de bailar pon algo de rock north roll", "expected_output": "play"}
+{"input": "dar los detalles del precio de las acciones de motorola", "expected_output": "qa"}
+{"input": "recuerdame contactar viejos amigos con los que no haya hablado los últimos seis meses antes de que pase", "expected_output": "calendar"}
+{"input": "hay algún especial en politica", "expected_output": "news"}
+{"input": "donde esta fiji", "expected_output": "qa"}
+{"input": "pon señorita de abraham mateo", "expected_output": "play"}
+{"input": "habrá una caída de temperatura esta noche", "expected_output": "weather"}
+{"input": "componga un nuevo correo electrónico pero tengo una nueva dirección esta vez maite arroba ejemplo punto com", "expected_output": "email"}
+{"input": "he enviado un correo a nicole sobre el tema del control de armas", "expected_output": "email"}
+{"input": "quiero saber más sobre este evento", "expected_output": "calendar"}
+{"input": "eliminar la última alarma", "expected_output": "alarm"}
+{"input": "puedes poner alicia en el país de las maravillas", "expected_output": "play"}
+{"input": "esta es una buena melodía anótalo en el archivo respectivo", "expected_output": "music"}
+{"input": "por favor pon sacudirlo por taylor swift", "expected_output": "play"}
+{"input": "muestrame podcasts", "expected_output": "play"}
+{"input": "quitar la cena de esta noche con laura", "expected_output": "calendar"}
+{"input": "sabes el nombre de la canción que está sonando", "expected_output": "music"}
+{"input": "encuentra una panadería sin glutén cerca de mí", "expected_output": "recommendation"}
+{"input": "cuanto es cuatro más cinco", "expected_output": "qa"}
+{"input": "puedes bajar de mi podcast el fichero disponible en internet y tocarlo una vez", "expected_output": "play"}
+{"input": "envía un correo al jefe diciendo que llegare tarde", "expected_output": "email"}
+{"input": "olly busca el uber más cercano", "expected_output": "transport"}
+{"input": "tuitea un mensaje a mrw diciéndoles que aún estoy esperando mi pedido", "expected_output": "social"}
+{"input": "juega scrabble conmigo", "expected_output": "play"}
+{"input": "pide ayuda solo a natalia", "expected_output": "email"}
+{"input": "agregue práctica al calendario el cuatro de febrero en parque del rey a las dos de la tarde", "expected_output": "calendar"}
+{"input": "consecuencias a las acciones", "expected_output": "qa"}
+{"input": "baja las luces a la mitad", "expected_output": "iot"}
+{"input": "quiero jugar al fifa diecisiete", "expected_output": "play"}
+{"input": "eliminar todos los eventos en el calendario", "expected_output": "calendar"}
+{"input": "dame la definición de la palabra pontificado", "expected_output": "qa"}
+{"input": "reproducir el próximo episodio del podcast", "expected_output": "play"}
+{"input": "pon la cancion mas popular de antonio orozco", "expected_output": "play"}
+{"input": "puedes poner para mi una canción de rap en la radio", "expected_output": "play"}
+{"input": "pon nacha pop la chica de ayer", "expected_output": "play"}
+{"input": "pon música romántica en cadena dial", "expected_output": "play"}
+{"input": "apaga el enchufe inteligente", "expected_output": "iot"}
+{"input": "muéstrame noticias sobre el medio ambiente", "expected_output": "news"}
+{"input": "solo me contó algunos eventos emocionantes en zona de valencia", "expected_output": "recommendation"}
+{"input": "cuales son las definiciones de naranja", "expected_output": "qa"}
+{"input": "pueden muchas conchas marinas vender a la orilla del mar", "expected_output": "qa"}
+{"input": "agrega esto a la lista", "expected_output": "lists"}
+{"input": "que hora es en valencia", "expected_output": "datetime"}
+{"input": "reanudar serie de podcast", "expected_output": "play"}
+{"input": "cuáles son las últimas noticias de rtve", "expected_output": "news"}
+{"input": "haz un café ahora", "expected_output": "iot"}
+{"input": "de que color es una fruta del dragon", "expected_output": "qa"}
+{"input": "mi deseo es escuchar algo de música country", "expected_output": "play"}
+{"input": "cuál es la composición de la silla", "expected_output": "qa"}
+{"input": "cuál es la diferencia entre el calendario romano y el gregoriano", "expected_output": "qa"}
+{"input": "reservar un billete a mallorca en tren", "expected_output": "transport"}
+{"input": "alexa por favor apaga las luces de la casa", "expected_output": "iot"}
+{"input": "comienza mi playlist en los cuarenta principales", "expected_output": "play"}
+{"input": "cualquier cosa interesante que esté sucediendo en el área de la bahía", "expected_output": "recommendation"}
+{"input": "poner este evento en un patrón de repetición en mi calendario", "expected_output": "calendar"}
+{"input": "revisa mi lista de cosas por hacer", "expected_output": "lists"}
+{"input": "cuál es la hora estándar oriental ahora mismo", "expected_output": "datetime"}
+{"input": "dame las últimas noticias", "expected_output": "news"}
+{"input": "enciende la lista de reproducción que yo he dedicado a la música rock", "expected_output": "play"}
+{"input": "por favor pon la alamar para el próximo viernes a las seis y media de la mañana", "expected_output": "alarm"}
+{"input": "me gustaría responder al correo electrónico más reciente", "expected_output": "email"}
+{"input": "sólo reproduce kiss f. m.", "expected_output": "play"}
+{"input": "busca un billete de tren a valencia", "expected_output": "transport"}
+{"input": "haz más brillante la luz del pasillo", "expected_output": "iot"}
+{"input": "qué novedades hay para hoy", "expected_output": "news"}
+{"input": "me gustaría que encendieras la tele", "expected_output": "iot"}
+{"input": "dime las noticias sobre los altibajos del mercado de acciones", "expected_output": "news"}
+{"input": "sabes el tiempo", "expected_output": "weather"}
+{"input": "cancelar la reunión de mañana en mi calendario", "expected_output": "calendar"}
+{"input": "hey olly qué hora es", "expected_output": "datetime"}
+{"input": "por favor envía un correo a mi amigo juan cómo estás", "expected_output": "email"}
+{"input": "alexa contesta al correo con el siguiente contenido hola a ti", "expected_output": "email"}
+{"input": "por favor pon algo de música jazz", "expected_output": "play"}
+{"input": "hay algún nuevos correos electrónicos en outlook", "expected_output": "email"}
+{"input": "notificaciónes de correo electrónico", "expected_output": "email"}
+{"input": "me gusta esta canción", "expected_output": "music"}
+{"input": "he recibido algún correo electrónico con los números de seguimiento", "expected_output": "email"}
+{"input": "por favor lee mi feed de facebook", "expected_output": "social"}
+{"input": "agregar maria jose en la tarjeta de menú", "expected_output": "lists"}
+{"input": "responder al correo electrónico de pedro bermejo", "expected_output": "email"}
+{"input": "incrementa el brillo de las luces", "expected_output": "iot"}
+{"input": "por favor comprueba mis recordatorios", "expected_output": "calendar"}
+{"input": "cómo está el tiempo en cáceres", "expected_output": "weather"}
+{"input": "olly borra la lista", "expected_output": "lists"}
+{"input": "tienes una broma graciosa para mi", "expected_output": "general"}
+{"input": "añade leroy merlin a mis correos de contacto ubicados en sevilla", "expected_output": "email"}
+{"input": "cuál es la próxima película de denzel washington's", "expected_output": "qa"}
+{"input": "alguna alarma activa actualmente", "expected_output": "alarm"}
+{"input": "sube el volumen", "expected_output": "audio"}
+{"input": "recuérdame mi aniversario con un día de adelanto", "expected_output": "calendar"}
+{"input": "puedes dejar de hablar", "expected_output": "audio"}
+{"input": "aquí está la verdar sobre los comedores de barcelona en el presupuesto de alguien", "expected_output": "news"}
+{"input": "alguien ponga la radio", "expected_output": "play"}
+{"input": "compre un billete de tren para este fin de semana", "expected_output": "transport"}
+{"input": "enséñame mi calendario evento este viernes por la tarde", "expected_output": "calendar"}
+{"input": "a que contacto no he llamado en doce meses", "expected_output": "email"}
+{"input": "tuitear queja a ono", "expected_output": "social"}
+{"input": "tema", "expected_output": "email"}
+{"input": "por favor envía a la nueva dirección de correo electrónico indicada", "expected_output": "email"}
+{"input": "ok google play ciento seis punto siete", "expected_output": "play"}
+{"input": "cuál fue el próximo evento", "expected_output": "calendar"}
+{"input": "luces al porcentaje", "expected_output": "iot"}
+{"input": "cuál es la respuesta al universo", "expected_output": "qa"}
+{"input": "despiértame a las cinco de la mañana", "expected_output": "alarm"}
+{"input": "hora de reunión abierta", "expected_output": "calendar"}
+{"input": "cuanto tiempo cocinas un pavo de quince libras", "expected_output": "cooking"}
+{"input": "dime el océano más grande del mundo", "expected_output": "qa"}
+{"input": "cuánto tiempo debo hervir el huevo", "expected_output": "cooking"}
+{"input": "pon al álbum de el bicho", "expected_output": "play"}
+{"input": "cuáles son los próximos conciertos en dallas", "expected_output": "calendar"}
+{"input": "cuál es la definición de lógica", "expected_output": "qa"}
+{"input": "por favor establezca esta fecha para repetir", "expected_output": "calendar"}
+{"input": "es hoy el dia de san patricio", "expected_output": "calendar"}
+{"input": "hacer café a las tres", "expected_output": "iot"}
+{"input": "ok google borra cumpleaños de javier del calendario", "expected_output": "calendar"}
+{"input": "un momento", "expected_output": "play"}
+{"input": "que océano toca en nuestro continente", "expected_output": "qa"}
+{"input": "añade un recordatorio de conferencia para mañana en madrid", "expected_output": "calendar"}
+{"input": "el dos del próximo mes cae en que día", "expected_output": "datetime"}
+{"input": "sistema cisco", "expected_output": "recommendation"}
+{"input": "condición de baja refrigeración", "expected_output": "weather"}
+{"input": "dime las noticias de el mundo", "expected_output": "news"}
+{"input": "publicar en twitter mi visita a japón", "expected_output": "social"}
+{"input": "háblame sobre las alarmas", "expected_output": "alarm"}
+{"input": "dime la temperatura", "expected_output": "weather"}
+{"input": "establecer la fecha del evento en el calendario con otros", "expected_output": "calendar"}
+{"input": "reserva un billete de tren de benalmádena málaga a barcelona barcelona", "expected_output": "transport"}
+{"input": "recibir notificaciones cada hora sobre noticias deportes", "expected_output": "news"}
+{"input": "en qué año salió esta canción", "expected_output": "music"}
+{"input": "cancelar el desayuno en casa de tamara", "expected_output": "calendar"}
+{"input": "hacer un pedido para llevar", "expected_output": "takeaway"}
+{"input": "reproducir el próximo episodio de un podcast", "expected_output": "play"}
+{"input": "quién es el último contacto que me llamó", "expected_output": "email"}
+{"input": "me ascendieron hoy se siente tan bien", "expected_output": "general"}
+{"input": "cuántos tornados ha habido este mes", "expected_output": "general"}
+{"input": "envía una respuesta si es muy importante", "expected_output": "email"}
+{"input": "por favor coge un billete de málaga a córdoba el martes", "expected_output": "transport"}
+{"input": "encontrar una película nominada al oscar", "expected_output": "recommendation"}
+{"input": "abre y pon música de mi playlist de correr", "expected_output": "play"}
+{"input": "encuentra un billete de tren a barcelona", "expected_output": "transport"}
+{"input": "recuérdame por favor", "expected_output": "calendar"}
+{"input": "cual es el cumpleaños de dolly parton", "expected_output": "qa"}
+{"input": "recuérdame mi reunión", "expected_output": "calendar"}
+{"input": "comienza y envía un correo electrónico a juan pérez", "expected_output": "email"}

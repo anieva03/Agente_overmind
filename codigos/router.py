@@ -3,14 +3,15 @@ import os
 import overmind
 from datasets import load_dataset
 from openai import OpenAI
+import time
 
 overmind.init(
     service_name="router-asistent",
     providers=["openai"],
-    capability_id=os.environ.get("OVERMIND_CAPABILITY_ID")
+    capability_id=os.environ.get("OVERMIND_CAPABILITY")
 )
 
-train=load_dataset("AmazonScience/massive","es-ES" ,split="train")
+train = load_dataset("AmazonScience/massive", "es-ES", split="train", trust_remote_code=True)
 DOMINIOS=train.features["scenario"].names #los 18 dominios de la base de datos MASSIVE
 
 SISTEMA = (
@@ -19,20 +20,29 @@ SISTEMA = (
     + ", ".join(DOMINIOS) + "."
 )
 
-cliente = OpenAI()
-PROFESOR=os.environ.get("MODELO_PROFESOR", "gpt-4.1-mini")
+cliente = OpenAI(
+    base_url="https://api.overmindlab.ai/api/v1",
+    api_key=os.environ["OVERMIND_API_KEY"],
+)
+
+PROFESOR = os.environ["MODELO_PROFESOR"]
 
 @overmind.run(intent=lambda peticion: peticion)
 def enrutar(peticion: str) -> str:
     respuesta = cliente.chat.completions.create(
         model=PROFESOR,
         temperature=0,
+        max_tokens=10,
         messages=[
             {"role": "system", "content": SISTEMA},
             {"role": "user", "content": peticion},
         ],
     )
-    etiqueta = respuesta.choices[0].message.content.strip().lower()
+
+    contenido = respuesta.choices[0].message.content or ""
+    if not contenido:
+        print(f"Respuesta vacía (finish_reason={respuesta.choices[0].finish_reason}): {peticion!r}")
+    etiqueta = contenido.strip().lower()
     overmind.deliver(etiqueta)  # marca el resultado que se puntúa
     return etiqueta
 
