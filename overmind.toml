@@ -1,8 +1,197 @@
 base-url = "https://api.overmindlab.ai"
 project-id = "9ee0d160-8fe3-45e2-b51c-b3cba3ce8127"
 project-name = "agente_overmind"
-repo_summary = ""
+repo_summary = "Práctica de Overmind: un enrutador de intenciones en español para un asistente virtual. codigos/router.py clasifica cada petición del usuario en uno de los 18 dominios (scenarios) del dataset AmazonScience/massive (es-ES) mediante una única llamada chat-completions a un modelo 'profesor' (MODELO_PROFESOR) servido a través del endpoint compatible OpenAI de Overmind, instrumentado con overmind.init/overmind.run/overmind.deliver. codigos/crear_eval.py genera eval_router.jsonl (300 filas input/expected_output del split test) y codigos/clase_mas_frecuente.py calcula la línea base de clase mayoritaria; ambos son scripts deterministas sin LLM."
 trace-provider = "overmind"
 version = "0.2.1"
 
-[capabilities]
+[repository_snapshot]
+repository = "anieva03/Agente_overmind"
+directory = "."
+branch = "claude/gracious-mayer-dld168"
+commit = "32b1ede3cd4277330ac208e805dfd36dae944235"
+dirty = true
+fingerprint = "84dd38f30306f2ace5a7d134f9e4cbbf55163804c05288dde6fbf0a5f077d65b"
+scanned_at = "2026-10-03T17:48:35.729233+00:00"
+
+[capabilities.router-asistente]
+slug = "router-asistente"
+name = "Router de asistente"
+description = "Enrutador de intenciones de un asistente virtual en español: recibe una petición del usuario y devuelve una única etiqueta de dominio (scenario de MASSIVE, 18 clases) generada por un modelo profesor con temperatura 0."
+entrypoint_fn = "enrutar"
+source_path = "codigos/router.py"
+system_prompt = "Eres el enrutador de un asistente virtual. Lee la petición del usuario y responde solo con una de estas etiquetas, sin nada más: {DOMINIOS}.\n\n({DOMINIOS} = los 18 nombres de scenario de AmazonScience/massive es-ES unidos por \", \": alarm, audio, iot, calendar, play, general, datetime, takeaway, news, music, weather, qa, social, recommendation, cooking, transport, email, lists)"
+tools_summary = "Sin herramientas: una sola llamada chat.completions (OpenAI SDK) contra el endpoint de Overmind."
+
+[capabilities.router-asistente.capability_card]
+task = "Dada una petición de usuario en español, devolver exactamente una etiqueta de dominio de MASSIVE que indique a qué parte del asistente enrutarla."
+modality = "text"
+domain = "clasificación de intención / enrutamiento de dominio para asistentes virtuales (MASSIVE es-ES)"
+tool_spec = []
+success_criteria = [
+    "la salida es exactamente una etiqueta válida del conjunto de dominios",
+    "la etiqueta coincide con el scenario de referencia de la petición",
+    "la respuesta no está vacía",
+]
+failure_modes = [
+    "respuesta vacía (finish_reason length/content_filter) devuelta como cadena vacía",
+    "texto adicional o explicación junto a la etiqueta, que rompe la comparación exacta",
+    "etiqueta fuera del conjunto (sinónimo, traducción al español como 'tiempo' en vez de 'weather')",
+    "confusión entre dominios próximos (play/music, qa/general, recommendation/takeaway, calendar/alarm)",
+    "colapso hacia la clase mayoritaria",
+]
+tool_protocol = []
+
+[capabilities.router-asistente.capability_card.input_schema]
+peticion = "str — petición del usuario en español (campo 'utt' de MASSIVE; 'input' en eval_router.jsonl)"
+
+[capabilities.router-asistente.capability_card.output_fields]
+etiqueta = "str — dominio predicho en minúsculas; debe coincidir con expected_output (scenario de MASSIVE)"
+
+[capabilities.router-asistente.capability_card.expected_output]
+description = "Una sola palabra en minúsculas, exactamente igual a uno de los 18 dominios de MASSIVE, que corresponde al scenario correcto de la petición (p. ej. 'que tiempo hace' -> weather; 'olly cambia la luz a azul' -> iot). Sin puntuación, explicación ni texto adicional."
+example = "weather"
+quality_signals = [
+    "la etiqueta pertenece al conjunto cerrado de 18 dominios",
+    "coincide exactamente con el scenario de referencia",
+    "no contiene texto, comillas ni puntuación extra",
+    "distingue dominios próximos (play vs music, qa vs general, recommendation vs takeaway)",
+]
+
+[capabilities.router-asistente.capability_card.vocabulary]
+"dominio / scenario" = "una de las 18 categorías de MASSIVE (alarm, audio, iot, calendar, play, general, datetime, takeaway, news, music, weather, qa, social, recommendation, cooking, transport, email, lists)"
+profesor = "modelo grande configurado en MODELO_PROFESOR cuyas etiquetas sirven de referencia/maestro"
+acierto = "proporción de predicciones iguales al scenario de referencia"
+
+[capabilities.router-asistente.capability_card.output_schema]
+provenance = []
+
+[[capabilities.router-asistente.capability_card.constraints]]
+rule = "responder solo con una etiqueta de la lista, sin nada más"
+type = "output_format"
+provenance = [
+    "codigos/router.py#L17-L21",
+]
+
+[capabilities.router-asistente.capability_card.constraints.params]
+allowed_labels = 18
+
+[[capabilities.router-asistente.capability_card.constraints]]
+rule = "generación determinista y corta"
+type = "budget"
+provenance = [
+    "codigos/router.py#L32-L40",
+]
+
+[capabilities.router-asistente.capability_card.constraints.params]
+temperature = 0
+max_tokens = 10
+
+[[capabilities.router-asistente.capability_card.constraints]]
+rule = "la etiqueta se normaliza con strip().lower() y se marca con overmind.deliver como resultado puntuado"
+type = "output_format"
+provenance = [
+    "codigos/router.py#L42-L47",
+]
+
+[capabilities.router-asistente.capability_card.constraints.params]
+normalization = "strip+lower"
+
+[[capabilities.router-asistente.capability_card.trajectory_map]]
+id = "clasificar-peticion"
+name = "Clasificar petición"
+mode = ""
+claim = "code_path"
+prompt_quote = ""
+routing = "cada llamada a enrutar(peticion)"
+anchors = [
+    "codigos.router.enrutar",
+]
+tools = []
+divergences = []
+provenance = [
+    "codigos/router.py#L30-L47",
+]
+verified = true
+
+[[capabilities.router-asistente.capability_card.trajectory_map.sequence]]
+step = "construir mensajes con prompt de sistema y petición del usuario"
+kind = "agent_step"
+anchors = [
+    "codigos.router.enrutar",
+]
+input = ""
+action = ""
+output = ""
+may_use = []
+
+[[capabilities.router-asistente.capability_card.trajectory_map.sequence]]
+step = "elegir el dominio de la petición"
+kind = "model_invocation"
+anchors = [
+    "codigos.router.enrutar",
+]
+input = "prompt de sistema con la lista de 18 dominios + petición del usuario"
+action = "seleccionar una etiqueta de dominio"
+output = "texto con la etiqueta -> normalización y entrega; contenido vacío -> aviso impreso y etiqueta vacía"
+may_use = []
+
+[[capabilities.router-asistente.capability_card.trajectory_map.sequence]]
+step = "normalizar la etiqueta y entregarla como resultado puntuable"
+kind = "agent_step"
+anchors = [
+    "codigos.router.enrutar",
+]
+input = ""
+action = ""
+output = ""
+may_use = []
+
+[capabilities.router-asistente.capability_card.trajectory_map.terminal]
+kind = "emits_record"
+description = "una etiqueta de dominio en minúsculas (o cadena vacía si el modelo no devolvió contenido)"
+
+[[capabilities.router-asistente.capability_card.anchors]]
+qualname = "codigos.router.enrutar"
+kind = "entry_point"
+file = "codigos/router.py#L30-L47"
+
+[capabilities.router-asistente.capability_card.provenance]
+paths = [
+    "codigos/router.py#L8-L47",
+    "codigos/crear_eval.py#L5-L14",
+]
+
+[[capabilities.router-asistente.eval_matrix]]
+name = "Etiqueta de dominio correcta"
+type = "llm_judge_custom"
+managed_name = ""
+measures = "Si la salida es una única etiqueta válida de MASSIVE que corresponde al dominio de la petición."
+rubric = "Se te da una petición de usuario en español y la salida de un enrutador. Dominios válidos: alarm, audio, iot, calendar, play, general, datetime, takeaway, news, music, weather, qa, social, recommendation, cooking, transport, email, lists. PASS si y solo si: (1) la salida es exactamente una de esas etiquetas, en minúsculas, sin texto, comillas ni puntuación adicional; y (2) es el dominio más apropiado para la petición (si hay expected_output, debe coincidir con él). FAIL si la salida está vacía, contiene explicación, es un sinónimo/traducción ('tiempo' en vez de 'weather'), está fuera de la lista o elige un dominio incorrecto (p. ej. music en lugar de play para 'pon canciones de X')."
+requires_reference = false
+rationale = "Protege el criterio central de éxito y los fallos de formato y confusión entre dominios próximos."
+
+[[capabilities.router-asistente.eval_matrix]]
+name = "Coincidencia exacta"
+type = "managed"
+managed_name = "Exact Match"
+measures = "La etiqueta predicha es igual al expected_output de eval_router.jsonl."
+rubric = ""
+requires_reference = true
+rationale = "El dataset de evaluación trae la etiqueta de referencia y main mide el acierto por igualdad exacta."
+
+[[capabilities.router-asistente.evals.metrics]]
+name = "Etiqueta de dominio correcta"
+type = "llm_judge_custom"
+prompt = "Se te da una petición de usuario en español y la salida de un enrutador. Dominios válidos: alarm, audio, iot, calendar, play, general, datetime, takeaway, news, music, weather, qa, social, recommendation, cooking, transport, email, lists. PASS si y solo si: (1) la salida es exactamente una de esas etiquetas, en minúsculas, sin texto, comillas ni puntuación adicional; y (2) es el dominio más apropiado para la petición (si hay expected_output, debe coincidir con él). FAIL si la salida está vacía, contiene explicación, es un sinónimo/traducción ('tiempo' en vez de 'weather'), está fuera de la lista o elige un dominio incorrecto (p. ej. music en lugar de play para 'pon canciones de X')."
+measures = "Si la salida es una única etiqueta válida de MASSIVE que corresponde al dominio de la petición."
+rationale = "Protege el criterio central de éxito y los fallos de formato y confusión entre dominios próximos."
+rubric = "Se te da una petición de usuario en español y la salida de un enrutador. Dominios válidos: alarm, audio, iot, calendar, play, general, datetime, takeaway, news, music, weather, qa, social, recommendation, cooking, transport, email, lists. PASS si y solo si: (1) la salida es exactamente una de esas etiquetas, en minúsculas, sin texto, comillas ni puntuación adicional; y (2) es el dominio más apropiado para la petición (si hay expected_output, debe coincidir con él). FAIL si la salida está vacía, contiene explicación, es un sinónimo/traducción ('tiempo' en vez de 'weather'), está fuera de la lista o elige un dominio incorrecto (p. ej. music en lugar de play para 'pon canciones de X')."
+
+[[capabilities.router-asistente.evals.metrics]]
+name = "Coincidencia exacta"
+type = "managed"
+measures = "La etiqueta predicha es igual al expected_output de eval_router.jsonl."
+rationale = "El dataset de evaluación trae la etiqueta de referencia y main mide el acierto por igualdad exacta."
+requires_reference = true
+managed_name = "Exact Match"
