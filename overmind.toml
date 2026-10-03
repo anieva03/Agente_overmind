@@ -1,0 +1,8 @@
+base-url = "https://api.overmindlab.ai"
+project-id = "9ee0d160-8fe3-45e2-b51c-b3cba3ce8127"
+project-name = "agente_overmind"
+repo_summary = ""
+trace-provider = "overmind"
+version = "0.2.1"
+
+[capabilities]
